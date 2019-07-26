@@ -1,0 +1,1 @@
+docker run --name nginx --network jenkins-nginx-net --publish 443:443 -v /home/docker/tls/:/etc/nginx/tls/ --env SERVER_NAME=daon-jenkins-ng.daon.com --env PROXY_HOST=jenkins daon/nginx &

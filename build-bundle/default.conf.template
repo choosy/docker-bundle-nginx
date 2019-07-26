@@ -1,0 +1,10 @@
+server {
+    listen 443 ssl;
+    server_name  ${SERVER_NAME};
+    ssl_certificate /etc/nginx/tls/server.pem;
+    ssl_certificate_key /etc/nginx/tls/private.key;
+
+    location / {
+        proxy_pass   http://${PROXY_HOST}:8080;
+    }
+}
